@@ -115,9 +115,20 @@ And we are finally root!
 ![Screenshot from 2022-12-24 21-38-57](https://user-images.githubusercontent.com/99975622/210877931-f4f93166-f8fe-401a-b50e-f6cc15709dbb.png)
 ### Proof of Concept...
 We were only able to execute the os module because the parameters on the application were using _**eval()**_ ...
-
+![image](https://user-images.githubusercontent.com/99975622/210879464-16efbe03-5376-42d4-84f4-df82132fcb5c.png)
+In our case...
 ![Screenshot from 2022-12-24 21-40-01](https://user-images.githubusercontent.com/99975622/210878232-6f93b219-6f40-42ab-b85a-a62a2c00d1e7.png)
 To fix this vulnerability, we can change the _**eval()**_ to _**int()**_ 
-
 ![Screenshot from 2022-12-24 21-39-32](https://user-images.githubusercontent.com/99975622/210879077-e07916be-ef25-4287-a0a0-ade007ba7c0a.png)
 
+#### FLAG72
+In the root directory...
+
+And done!
+
+![Screenshot from 2022-12-24 21-41-15](https://user-images.githubusercontent.com/99975622/210880021-ea1ee04b-b69e-4ee0-9174-0305ae2c30ee.png)
+
+
+## My socials:
+<br>@ twitter: https://twitter.com/M3tr1c_root
+<br>@ instagram: https://instagram.com/m3tr1c_r00t/
