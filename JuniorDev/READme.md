@@ -36,6 +36,27 @@ OS and Service detection performed. Please report any incorrect results at https
 # Nmap done at Sat Dec 24 19:47:58 2022 -- 1 IP address (1 host up) scanned in 26.91 seconds
 ```
 With only two ports open, we can go and take a look at the web server at _**port 30609**_ ...
+![Screenshot from 2022-12-25 07-54-20](https://user-images.githubusercontent.com/99975622/210867918-460e5821-585f-485d-a4ce-fd9b94f36800.png)
+
+The next thing we can do, try to brute force the login page as the box's name is junior dev, so probably there's some kind of misconfiguration.
+<br> Also, jenkins doesnt have a default password but has a default username, so we are gonna brute force the login using hydra ...
+
+![Screenshot from 2022-12-25 08-24-21](https://user-images.githubusercontent.com/99975622/210868426-7a4113b1-db9f-4299-bcb1-631608935874.png)
+
+```
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.150.150.38 -s 30609 http-post-form "/j_acegi_security_check:j_username=^USER^&j_password=^PASS^&from=%2F&Submit=Sign+in:F=loginError"
+```
+Now that we have the creds, let login into the site...
+![Screenshot from 2022-12-25 08-25-11](https://user-images.githubusercontent.com/99975622/210868917-d86374ea-b80e-4b0f-badd-c56528718f4c.png)
+
+Next step after login, we can try and look for a way to get a reverse shell onto the server...
+You will notice that there is a section for actions and in those actions, there is a section for executing shell commands...
+![Screenshot from 2022-12-25 08-25-34](https://user-images.githubusercontent.com/99975622/210869289-3269328f-1ca2-4239-90e5-26eb2034c1c6.png)
+
+
+
+
+
 
 
 
